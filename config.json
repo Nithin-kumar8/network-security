@@ -1,0 +1,21 @@
+{
+    "blacklisted_ips": ["192.168.1.100", "10.0.0.77", "185.143.223.1"],
+    "allowed_countries": ["US", "CA", "GB", "DE", "FR", "AU"],
+    "restricted_endpoints": ["/admin", "/root", "/config", "/database", "/backup"],
+    "thresholds": {
+        "failed_login_attempts": 5,
+        "failed_login_timeframe_minutes": 2,
+        "high_traffic_requests": 100,
+        "high_traffic_timeframe_seconds": 10,
+        "unusual_country_attempts": 3
+    },
+    "log_formats": {
+        "firewall": "%timestamp% %src_ip% %dst_ip% %action% %protocol% %port%",
+        "access": "%timestamp% %ip% %user_id% %request% %status%",
+        "auth": "%timestamp% %ip% %user% %event% %result%"
+    },
+    "alert_levels": {
+        "high": ["unauthorized_access", "blacklisted_ip", "firewall_block"],
+        "medium": ["brute_force", "high_traffic", "unusual_country"]
+    }
+}
