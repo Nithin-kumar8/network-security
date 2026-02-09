@@ -32,10 +32,12 @@ Linux or Windows operating system
 Minimum 4 GB RAM  
 
 # Project Structure
-packet_sniffer.py  
-traffic_analyzer.py  
-intrusion_detector.py  
-logger.py  
+main.py
+dashboard.py  
+generate_sample_logs.py  
+log_parser.py  
+reporter.py 
+rule_engine.py
 requirements.txt  
 README.md  
 
